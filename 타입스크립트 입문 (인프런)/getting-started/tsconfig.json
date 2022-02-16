@@ -1,0 +1,8 @@
+{
+  // 컴파일할 때 부가적인 옵션
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "noImplicitAny": true // 기본적인 any라도 넣어야 한다.
+  }
+}
