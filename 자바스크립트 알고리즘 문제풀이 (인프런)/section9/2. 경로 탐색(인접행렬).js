@@ -1,3 +1,4 @@
+// 노드 개수가 적을 때
 function solution(n, arr) {
   const graph = Array.from({ length: n + 1 }, () => new Array(n + 1).fill(false));
   const visit = Array.from({ length: n + 1 }, () => false);
