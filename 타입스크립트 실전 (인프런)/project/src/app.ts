@@ -20,10 +20,7 @@ const recoveredSpinner = createSpinnerElement('recovered-spinner');
 function createSpinnerElement(id) {
   const wrapperDiv = document.createElement('div');
   wrapperDiv.setAttribute('id', id);
-  wrapperDiv.setAttribute(
-    'class',
-    'spinner-wrapper flex justify-center align-center',
-  );
+  wrapperDiv.setAttribute('class', 'spinner-wrapper flex justify-center align-center');
   const spinnerDiv = document.createElement('div');
   spinnerDiv.setAttribute('class', 'ripple-spinner');
   spinnerDiv.appendChild(document.createElement('div'));
@@ -36,7 +33,6 @@ function createSpinnerElement(id) {
 let isDeathLoading = false;
 let isRecoveredLoading = false;
 
-// api
 function fetchCovidSummary() {
   const url = 'https://api.covid19api.com/summary';
   return axios.get(url);
@@ -61,10 +57,7 @@ function initEvents() {
 
 async function handleListClick(event) {
   let selectedId;
-  if (
-    event.target instanceof HTMLParagraphElement ||
-    event.target instanceof HTMLSpanElement
-  ) {
+  if (event.target instanceof HTMLParagraphElement || event.target instanceof HTMLSpanElement) {
     selectedId = event.target.parentElement.id;
   }
   if (event.target instanceof HTMLLIElement) {
@@ -78,14 +71,8 @@ async function handleListClick(event) {
   startLoadingAnimation();
   isDeathLoading = true;
   const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
-  const { data: recoveredResponse } = await fetchCountryInfo(
-    selectedId,
-    'recovered',
-  );
-  const { data: confirmedResponse } = await fetchCountryInfo(
-    selectedId,
-    'confirmed',
-  );
+  const { data: recoveredResponse } = await fetchCountryInfo(selectedId, 'recovered');
+  const { data: confirmedResponse } = await fetchCountryInfo(selectedId, 'confirmed');
   endLoadingAnimation();
   setDeathsList(deathResponse);
   setTotalDeathsByCountry(deathResponse);
@@ -96,9 +83,7 @@ async function handleListClick(event) {
 }
 
 function setDeathsList(data) {
-  const sorted = data.sort(
-    (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
-  );
+  const sorted = data.sort((a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date));
   sorted.forEach(value => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item-b flex align-center');
@@ -122,9 +107,7 @@ function setTotalDeathsByCountry(data) {
 }
 
 function setRecoveredList(data) {
-  const sorted = data.sort(
-    (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
-  );
+  const sorted = data.sort((a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date));
   sorted.forEach(value => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item-b flex align-center');
@@ -217,9 +200,7 @@ function setTotalRecoveredByWorld(data) {
 }
 
 function setCountryRanksByConfirmedCases(data) {
-  const sorted = data.Countries.sort(
-    (a, b) => b.TotalConfirmed - a.TotalConfirmed,
-  );
+  const sorted = data.Countries.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
   sorted.forEach(value => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item flex align-center');
