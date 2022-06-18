@@ -31,3 +31,9 @@
 
 > 2022년 6월 18일 ~ `IN PROGRESS`
 > Git & Github 제대로 배우기
+
+### 7. 얄팍한 GraphQL과 Apollo (인프런 / 얄코)
+
+> 2022년 6월 18일 ~ `IN PROGRESS`
+> GraphQL & Apollo 간단하게 살펴보기
+> [강의 링크](https://www.inflearn.com/course/%EC%96%84%ED%8C%8D%ED%95%9C-graphql-apollo/)
