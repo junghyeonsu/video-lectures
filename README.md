@@ -26,3 +26,8 @@
 
 > 2022년 6월 1일 ~ `IN PROGRESS`
 > HTTP 및 웹 기본 지식 학습하기
+
+### 6. 제대로 파는 Git & GitHub (인프런 / 얄코)
+
+> 2022년 6월 18일 ~ `IN PROGRESS`
+> Git & Github 제대로 배우기
